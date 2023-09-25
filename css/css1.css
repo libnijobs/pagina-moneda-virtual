@@ -1,3 +1,12 @@
+:root {
+  --white: #FFFFFF;
+  --grey: #5e5e5ec5;
+  --blackfondo: #000000;
+  --yellow: #eeff00;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 20px;
+  }
 header{
   text-align: center;
   margin-left: 20px;
@@ -37,4 +46,78 @@ div p{
   font-weight: bold;
   font-family: serif;
   color: aliceblue;
+}
+
+/* --------------------------------------------------------------- */
+/* css del menu movile*/
+
+.mobile-menu{
+  padding: 24px;
+  margin-top: 30px;
+  background-color: var(--grey);
+}
+.mobile-menu a{
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+
+}
+.mobile-menu ul{
+  list-style: none;
+  margin-top: 24px;
+}
+.mobile-menu ul:nth-child(1){
+  border-bottom: 1px solid var(--white);
+}
+.mobile-menu ul li{
+  margin-bottom: 24px;
+}
+.mobile-menu ul .email{
+  font-size: var(--sm);
+  font-weight: 300 ;
+}
+.mobile-menu ul:nth-child(3){
+  margin-top: 80px;
+}
+.mobile-menu .sing-out{
+  color: #ffffff;
+  font-size: var(--sm);
+}
+.mobile-menu .sing-out:hover{
+  color: #ffbf00;
+}
+/* ----------------------------- */
+.desktop-menu{
+  width: 100px;
+  height: auto;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  background-color: var(--blackfondo);
+  padding: 20px 20px 0 20px;
+}
+.desktop-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.desktop-menu ul li:nth-child(1),
+.desktop-menu ul li:nth-child(2){
+  font-weight: bold;
+}
+.desktop-menu ul li{
+  text-align: end;
+}
+.desktop-menu ul li:last-child {
+  padding-top: 20px;
+  border-top: 1px solid var(--white);
+}
+.desktop-menu ul li:last-child a {
+  color: var(--yellow);
+  font-size: var(--sm);
+}
+.desktop-menu ul li a {
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: inline-block;
 }
