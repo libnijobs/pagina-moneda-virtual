@@ -1,0 +1,42 @@
+nav .menu-navbar {
+  display: none;
+}
+.navbar-left ul {
+  display: none;
+}
+.logo-nav {
+    height: 150px;
+    width: 165px;
+}
+.navbar-left ul,
+.navbar-right ul,
+.navbar-right {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.product-card {
+    width: 240px;
+    background-color: var(--blackfondo);
+    border-radius: 10px;
+    box-shadow: 0 0 15px #000;
+  }
+  .product-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .product-info figure img{
+    width: 40px;
+    height: 40px;
+  }
+  ul li.navbar-email {
+    display: none;
+}
+@media (min-width: 1080px) {
+    ul li.navbar-email {
+        display: flex;
+    }
+}
