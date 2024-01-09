@@ -167,3 +167,45 @@ nav .menu-navbar {
     0 0 22px rgba(253, 219, 0, 0.447);
   border-radius: 20px;
 }
+
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.inactive{
+  display: none;
+}
+.desktop-menu{
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  width: 140px;
+  height: auto;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  background-color: var(--blackfondo);
+  padding: 20px 20px 0 20px;
+}
+.desktop-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.desktop-menu ul li:nth-child(1),
+.desktop-menu ul li:nth-child(2){
+  font-weight: bold;
+}
+.desktop-menu ul li{
+  text-align: end;
+}
+.desktop-menu ul li:last-child {
+  padding-top: 20px;
+  border-top: 1px solid var(--white);
+}
+.desktop-menu ul li:last-child a {
+  color: var(--yellow);
+  font-size: var(--sm);
+}
+.desktop-menu ul li a {
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: inline-block;
+}
