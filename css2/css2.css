@@ -180,7 +180,7 @@ body {
   display: flex;
 }
 .navbar-left ul{
-  margin-left: 50px;
+  margin-left: 40px;
 }
 .navbar-left ul,
 .navbar-right ul,
@@ -196,6 +196,7 @@ body {
   color: var(--white);
   padding: 10px;
   border-radius: 20px;
+  margin-left: 10px;
 }
 .navbar-left ul li a:hover,
 .navbar-right ul li a:hover{
