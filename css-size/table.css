@@ -17,7 +17,7 @@ nav .menu-navbar {
   align-items: center;
 }
 .product-detail{
-    position: fixed;
+    position: absolute;
     right: 20px;
     top: 168px;
     width: 290.1px;
