@@ -6,13 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const shoppingCart = document.querySelector(".navbar-shopping-cart");
   const productDetail = document.querySelector(".product-detail");
   const moreProductDetail = document.querySelector(".More-Product-Details");
-  const productClose = document.querySelector('product-detail-close')
+  const productClose = document.querySelector(".product-detail-close");
   const cardsContainer = document.querySelector(".cards-container");
-
-  
+  const body = document.querySelector('body')
+  const nav = document.querySelector('nav')
 
   const productList = [];
   productList.push({
+    id: "p1",
     nombre: "Bitcoin",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://th.bing.com/th/id/R.3c775a69376a877a9fd2f2d11d528d6c?rik=X%2fLpN4tIl1D75w&riu=http%3a%2f%2fpxb.cdn.eldiariodelarepublica.com%2frepublica%2f012018%2f1515948682740.jpg&ehk=2ZBAoo%2fcwKB6GakTZXPYXUsnGI5fgVaxEfLD176FRAI%3d&risl=&pid=ImgRaw&r=0",
   });
   productList.push({
+    id: "p2",
     nombre: "Ethereum",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://cryptoshitcompra.com/wp-content/uploads/2021/06/ethereum.jpg",
   });
   productList.push({
+    id: "p3",
     nombre: "BNB",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://th.bing.com/th/id/R.3c775a69376a877a9fd2f2d11d528d6c?rik=X%2fLpN4tIl1D75w&riu=http%3a%2f%2fpxb.cdn.eldiariodelarepublica.com%2frepublica%2f012018%2f1515948682740.jpg&ehk=2ZBAoo%2fcwKB6GakTZXPYXUsnGI5fgVaxEfLD176FRAI%3d&risl=&pid=ImgRaw&r=0",
   });
   productList.push({
+    id: "p4",
     nombre: "BNB",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -41,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://th.bing.com/th/id/R.3c775a69376a877a9fd2f2d11d528d6c?rik=X%2fLpN4tIl1D75w&riu=http%3a%2f%2fpxb.cdn.eldiariodelarepublica.com%2frepublica%2f012018%2f1515948682740.jpg&ehk=2ZBAoo%2fcwKB6GakTZXPYXUsnGI5fgVaxEfLD176FRAI%3d&risl=&pid=ImgRaw&r=0",
   });
   productList.push({
+    id: "p5",
     nombre: "BNB",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -48,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://th.bing.com/th/id/R.3c775a69376a877a9fd2f2d11d528d6c?rik=X%2fLpN4tIl1D75w&riu=http%3a%2f%2fpxb.cdn.eldiariodelarepublica.com%2frepublica%2f012018%2f1515948682740.jpg&ehk=2ZBAoo%2fcwKB6GakTZXPYXUsnGI5fgVaxEfLD176FRAI%3d&risl=&pid=ImgRaw&r=0",
   });
   productList.push({
+    id: "p6",
     nombre: "BNB",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -55,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://th.bing.com/th/id/R.3c775a69376a877a9fd2f2d11d528d6c?rik=X%2fLpN4tIl1D75w&riu=http%3a%2f%2fpxb.cdn.eldiariodelarepublica.com%2frepublica%2f012018%2f1515948682740.jpg&ehk=2ZBAoo%2fcwKB6GakTZXPYXUsnGI5fgVaxEfLD176FRAI%3d&risl=&pid=ImgRaw&r=0",
   });
   productList.push({
+    id: "p7",
     nombre: "BNB",
     precio: 40,
     imagen: "icons/shopping-cart-add.png",
@@ -63,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function renderProduct(arr) {
-    for (let product of arr) {
+    for (let [indice, product] of arr.entries()) {
       const productCard = document.createElement("div");
       productCard.classList.add("product-card");
 
@@ -90,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productCard.appendChild(productInfo);
       productCard.appendChild(productInfodiv);
       productCard.appendChild(figure);
-      productCard.addEventListener('click', openDespliegueCards)
+      productCard.addEventListener("click", openDespliegueCards);
       figure.appendChild(imgFigure);
       productInfodiv.appendChild(productName);
       productInfodiv.appendChild(productPrice);
@@ -98,42 +105,48 @@ document.addEventListener("DOMContentLoaded", function () {
       productInfo.appendChild(figure);
       // console.log(product.precio === 40);
     }
+
   }
 
   renderProduct(productList);
-  
+
   imgMenu.addEventListener("click", despliegueImg);
   navbarEmail.addEventListener("click", despliegue);
   shoppingCart.addEventListener("click", despliegueShopping);
-  productClose.addEventListener('click', productCloseD);
+  productClose.addEventListener("click", productCloseD);
 
   function despliegue() {
     desktopMenu.classList.toggle("inactive");
     menuMovile.classList.add("inactiveMovil");
     productDetail.classList.add("inactiveShoppingCart");
+    moreProductDetail.classList.add("inactive-product");
   }
   function despliegueImg() {
     menuMovile.classList.toggle("inactiveMovil");
     desktopMenu.classList.add("inactive");
     productDetail.classList.add("inactiveShoppingCart");
+    moreProductDetail.classList.add("inactive-product");
   }
   function despliegueShopping() {
     productDetail.classList.toggle("inactiveShoppingCart");
     menuMovile.classList.add("inactiveMovil");
     desktopMenu.classList.add("inactive");
+    moreProductDetail.classList.add("inactive-product");
   }
   function openDespliegueCards() {
     moreProductDetail.classList.remove("inactive-product");
-    console.log('estoy cliqueando');
     menuMovile.classList.add("inactiveMovil");
     desktopMenu.classList.add("inactive");
     productDetail.classList.add("inactiveShoppingCart");
   }
-  function productCloseD(){
-    moreProductDetail.classList.add("inactive-product")
-    console.log('estoy cliqueando');
+  function productCloseD() {
+    moreProductDetail.classList.add("inactive-product");
+    menuMovile.classList.add("inactiveMovil");
+    desktopMenu.classList.add("inactive");
+    productDetail.classList.add("inactiveShoppingCart");
   }
-});
+})
+
 
 // desktopMenu.classList.length;
 // console.log(desktopMenu);
